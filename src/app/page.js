@@ -21,14 +21,12 @@ export default function Home() {
           >
             🏁 Half Marathon Training
           </Link>
-          <a
+          <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/profile"
           >
-            📚 Learn More
-          </a>
+            👤 Profile
+          </Link>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl">
@@ -51,16 +49,26 @@ export default function Home() {
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div>
                 <h3 className="font-medium text-gray-900">10K Training</h3>
-                <p className="text-sm text-gray-700">Coming soon - 8-week training plans</p>
+                <p className="text-sm text-gray-700">8-week training plans for all levels</p>
               </div>
-              <span className="text-gray-400 font-medium">Coming Soon</span>
+              <Link
+                href="/10k"
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                View Plan →
+              </Link>
             </div>
             <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
               <div>
                 <h3 className="font-medium text-gray-900">Full Marathon</h3>
-                <p className="text-sm text-gray-700">Coming soon - 16-week training plans</p>
+                <p className="text-sm text-gray-700">16-week training plans for all levels</p>
               </div>
-              <span className="text-gray-400 font-medium">Coming Soon</span>
+              <Link
+                href="/marathon"
+                className="text-blue-600 hover:text-blue-800 font-medium"
+              >
+                View Plan →
+              </Link>
             </div>
           </div>
         </div>
