@@ -42,6 +42,10 @@ export default function ProfilePage() {
     e.preventDefault();
     // For now, just log the form data
     console.log("Submitted profile:", form);
+    window.dataLayer.push({
+      event: "profile_submitted",
+      profile: form,
+    });
     alert("Profile submitted! (See console for data)");
   };
 

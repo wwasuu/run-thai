@@ -1,10 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HalfMarathonTraining() {
   const [selectedLevel, setSelectedLevel] = useState("beginner");
   const [currentWeek, setCurrentWeek] = useState(1);
+
+  useEffect(() => {
+    window.dataLayer.push({
+      event: "distance_selected",
+      distance: "21.1",
+    });
+  }, []);
+
+  const handleLevelChange = (level) => {
+    setSelectedLevel(level);
+    window.dataLayer.push({
+      event: "level_selected",
+      distance: "21.1",
+      level: level,
+    });
+  };
 
   const trainingPlans = {
     beginner: {
@@ -1629,7 +1645,7 @@ export default function HalfMarathonTraining() {
             {Object.entries(trainingPlans).map(([level, plan]) => (
               <button
                 key={level}
-                onClick={() => setSelectedLevel(level)}
+                onClick={() => handleLevelChange(level)}
                 className={`p-4 rounded-lg border-2 transition-all duration-200 ${
                   selectedLevel === level
                     ? "border-blue-500 bg-blue-50"
